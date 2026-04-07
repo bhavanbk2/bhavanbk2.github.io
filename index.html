@@ -3,389 +3,1084 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhavan Kumar Basvaraju — Screening Call Prep</title>
+<title>Bhavan Kumar Basvaraju — Senior Data Scientist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1a1a1a;background:#f8f7f4;padding:2rem 1rem}
-.wrap{max-width:860px;margin:0 auto;padding:1rem 0}
-.section-label{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#888;margin-bottom:0.75rem}
-.card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:1.25rem}
-.card+.card{margin-top:0.75rem}
-.chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.5rem}
-.chip{font-size:12px;padding:3px 10px;border-radius:20px;background:#f1efe8;color:#5f5e5a;border:1px solid #e5e5e5}
-.chip.blue{background:#E6F1FB;color:#185FA5}
-.chip.teal{background:#E1F5EE;color:#0F6E56}
-.chip.amber{background:#FAEEDA;color:#854F0B}
-.chip.coral{background:#FAECE7;color:#993C1D}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0.75rem}
-.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.75rem}
-.metric{background:#f8f7f4;border-radius:8px;padding:0.875rem 1rem}
-.metric-label{font-size:12px;color:#888;margin-bottom:4px}
-.metric-val{font-size:22px;font-weight:500}
-.metric-val.blue{color:#185FA5}
-.metric-val.teal{color:#0F6E56}
-.metric-val.amber{color:#854F0B}
-.metric-val.coral{color:#993C1D}
-.qa-item{border-left:2px solid #e5e5e5;padding-left:1rem;margin-bottom:1.25rem}
-.qa-q{font-size:13px;font-weight:600;color:#888;margin-bottom:0.5rem}
-.qa-a{font-size:14px;line-height:1.65;color:#1a1a1a}
-.nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
-.nav-btn{font-size:13px;padding:6px 14px;border-radius:8px;background:transparent;border:1px solid #d3d1c7;color:#888;cursor:pointer;transition:all 0.15s;font-family:inherit}
-.nav-btn:hover,.nav-btn.active{background:#f1efe8;color:#1a1a1a;border-color:#b4b2a9}
-.tab-content{display:none}
-.tab-content.active{display:block}
-h2{font-size:18px;font-weight:500;margin-bottom:0.75rem}
-h3{font-size:15px;font-weight:500;margin-bottom:0.5rem}
-p{font-size:14px;line-height:1.7;color:#1a1a1a}
-.sub{font-size:13px;color:#888;line-height:1.6}
-ul{padding-left:1.1rem;font-size:14px;line-height:1.8}
-li{color:#1a1a1a}
-.accent-bar{width:3px;border-radius:2px;margin-right:0.75rem;flex-shrink:0}
-.row-flex{display:flex;align-items:flex-start}
-.tag-line{font-size:13px;color:#888;margin-top:3px}
-.divider{border:none;border-top:1px solid #e5e5e5;margin:1.25rem 0}
-a{color:#185FA5}
+:root {
+  --bg: #0c0f14;
+  --bg2: #13171f;
+  --bg3: #1a1f2b;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.12);
+  --text: #e8eaf0;
+  --muted: #7e8599;
+  --dim: #4a5068;
+  --accent: #4f9cf9;
+  --accent2: #38d9a9;
+  --accent3: #ffa94d;
+  --accent4: #f77f7f;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ─── NOISE TEXTURE ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  height: 60px;
+  background: rgba(12,15,20,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  font-size: 13px;
+  padding: 7px 18px;
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.2s;
+  background: rgba(255,255,255,0.04);
+}
+.nav-cta:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.25); }
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7rem 3rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.hero-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  background: var(--accent);
+}
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+h1 em {
+  font-style: italic;
+  color: var(--accent2);
+}
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+.btn-primary {
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { background: #6aabff; transform: translateY(-1px); }
+.btn-ghost {
+  padding: 12px 28px;
+  border: 1px solid var(--border2);
+  color: var(--text);
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  transition: all 0.2s;
+  background: transparent;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.04); }
+
+.hero-stats {
+  display: flex;
+  gap: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.stat-val {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* ─── SECTION SHELL ─── */
+section {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 3rem;
+}
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.section-num {
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 0.1em;
+  font-weight: 300;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.section-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  margin-left: 1rem;
+}
+
+/* ─── ABOUT ─── */
+#about .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+#about .bio { font-size: 1rem; color: var(--muted); line-height: 1.85; font-weight: 300; }
+#about .bio strong { color: var(--text); font-weight: 500; }
+.info-block { margin-top: 2rem; }
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.info-key { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+.info-val { color: var(--text); }
+.info-val a { color: var(--accent); text-decoration: none; }
+.info-val a:hover { text-decoration: underline; }
+
+.strengths-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+.strength-pill {
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  background: var(--bg2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.strength-pill .num {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--accent2);
+  line-height: 1;
+}
+
+/* ─── EXPERIENCE ─── */
+#experience .timeline { position: relative; }
+.timeline-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 3rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+.timeline-item:last-child { border-bottom: 1px solid var(--border); }
+.timeline-meta { padding-top: 0.25rem; }
+.timeline-period { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 6px; }
+.timeline-company {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+.timeline-company.current { color: var(--accent); }
+.timeline-loc { font-size: 12px; color: var(--dim); }
+.timeline-role { font-size: 1rem; font-weight: 500; margin-bottom: 0.75rem; color: var(--text); }
+.timeline-desc { font-size: 14px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+.impact-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem; }
+.impact-chip {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(79,156,249,0.1);
+  border: 1px solid rgba(79,156,249,0.2);
+  color: var(--accent);
+  white-space: nowrap;
+}
+.impact-chip.green {
+  background: rgba(56,217,169,0.1);
+  border-color: rgba(56,217,169,0.2);
+  color: var(--accent2);
+}
+.impact-chip.amber {
+  background: rgba(255,169,77,0.1);
+  border-color: rgba(255,169,77,0.2);
+  color: var(--accent3);
+}
+.impact-chip.red {
+  background: rgba(247,127,127,0.1);
+  border-color: rgba(247,127,127,0.2);
+  color: var(--accent4);
+}
+
+/* ─── PROJECTS ─── */
+#projects .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+.proj-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: all 0.25s;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.proj-card:hover {
+  border-color: var(--border2);
+  background: var(--bg3);
+  transform: translateY(-3px);
+}
+.proj-card-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.proj-icon {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.proj-icon.blue { background: rgba(79,156,249,0.12); }
+.proj-icon.green { background: rgba(56,217,169,0.12); }
+.proj-icon.amber { background: rgba(255,169,77,0.12); }
+.proj-badge {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.proj-badge.healthcare { background: rgba(79,156,249,0.1); color: var(--accent); border: 1px solid rgba(79,156,249,0.2); }
+.proj-badge.retail { background: rgba(56,217,169,0.1); color: var(--accent2); border: 1px solid rgba(56,217,169,0.2); }
+.proj-badge.research { background: rgba(255,169,77,0.1); color: var(--accent3); border: 1px solid rgba(255,169,77,0.2); }
+.proj-title { font-family: var(--serif); font-size: 1.2rem; line-height: 1.2; }
+.proj-desc { font-size: 13.5px; color: var(--muted); line-height: 1.7; font-weight: 300; flex: 1; }
+.proj-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.proj-metric {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+}
+.proj-metric-val { font-family: var(--serif); font-size: 1.2rem; color: var(--accent2); line-height: 1; margin-bottom: 2px; }
+.proj-metric-label { font-size: 11px; color: var(--dim); }
+.proj-stack { display: flex; flex-wrap: wrap; gap: 5px; }
+.proj-tag {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 5px;
+  background: rgba(255,255,255,0.05);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+/* ─── SKILLS ─── */
+#skills .skill-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.skill-group {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.skill-group-label {
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.skill-group-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.skill-tag {
+  font-size: 12.5px;
+  padding: 4px 11px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: all 0.15s;
+}
+.skill-tag:hover { border-color: var(--border2); background: rgba(255,255,255,0.07); }
+
+/* ─── EDUCATION & CERTS ─── */
+#education .edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.edu-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+.edu-degree {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+.edu-school { font-size: 14px; color: var(--muted); margin-bottom: 6px; }
+.edu-year {
+  font-size: 12px;
+  color: var(--accent2);
+  padding: 3px 10px;
+  background: rgba(56,217,169,0.08);
+  border: 1px solid rgba(56,217,169,0.15);
+  border-radius: 20px;
+  display: inline-block;
+}
+.cert-list { margin-top: 1rem; display: flex; flex-direction: column; gap: 8px; }
+.cert-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.65rem 0.85rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13.5px;
+}
+.cert-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent3);
+  flex-shrink: 0;
+}
+
+/* ─── CONTACT ─── */
+#contact {
+  text-align: center;
+  padding: 6rem 3rem;
+}
+#contact h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+#contact .sub { color: var(--muted); max-width: 440px; margin: 0 auto 2.5rem; font-weight: 300; }
+.contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13.5px;
+  background: var(--bg2);
+  transition: all 0.2s;
+}
+.contact-link:hover { color: var(--text); border-color: var(--border2); background: var(--bg3); }
+
+/* ─── FOOTER ─── */
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--dim);
+  font-size: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.35s; }
+.delay-4 { animation-delay: 0.5s; }
+.delay-5 { animation-delay: 0.65s; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  section, #hero, #contact { padding-left: 1.5rem; padding-right: 1.5rem; }
+  #about .grid { grid-template-columns: 1fr; gap: 2rem; }
+  .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+  #education .edu-grid { grid-template-columns: 1fr; }
+  .strengths-grid { grid-template-columns: 1fr; }
+}
+
+/* ─── ACTIVE NAV INDICATOR ─── */
+.nav-links a.active { color: var(--text); }
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--bg3); border-radius: 3px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-<div style="margin-bottom:1.5rem">
-  <h2 style="font-size:22px;margin-bottom:4px">Bhavan Kumar Basvaraju</h2>
-  <p class="sub">Senior Data Scientist · Johnson &amp; Johnson &nbsp;·&nbsp; San Jose State University MS &nbsp;·&nbsp; Bay Area, CA</p>
-  <p class="sub" style="margin-top:4px"><a href="https://github.com/bhavanbk2">github.com/bhavanbk2</a> &nbsp;·&nbsp; <a href="https://scholar.google.com/citations?user=HNc1CBIAAAAJ&hl=en">Google Scholar</a></p>
-</div>
 
-<div class="nav">
-  <button class="nav-btn active" onclick="show('snapshot',this)">Snapshot</button>
-  <button class="nav-btn" onclick="show('elevator',this)">Elevator Pitch</button>
-  <button class="nav-btn" onclick="show('experience',this)">Experience Deep-Dive</button>
-  <button class="nav-btn" onclick="show('projects',this)">Key Projects</button>
-  <button class="nav-btn" onclick="show('skills',this)">Skills &amp; Stack</button>
-  <button class="nav-btn" onclick="show('strengths',this)">Strengths Profile</button>
-  <button class="nav-btn" onclick="show('qa',this)">Common Q&amp;A</button>
-</div>
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">BKB</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:bhavanb2000@gmail.com" class="nav-cta">Hire me</a>
+</nav>
 
-<div id="snapshot" class="tab-content active">
-  <div class="section-label">at a glance</div>
-  <div class="grid3" style="margin-bottom:1.25rem">
-    <div class="metric"><div class="metric-label">Years of experience</div><div class="metric-val blue">4+</div></div>
-    <div class="metric"><div class="metric-label">Companies</div><div class="metric-val teal">3</div></div>
-    <div class="metric"><div class="metric-label">Research publications</div><div class="metric-val amber">Active</div></div>
-    <div class="metric"><div class="metric-label">Visa status</div><div class="metric-val coral">H1B needed</div></div>
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-eyebrow fade-up">Senior Data Scientist · Bay Area, CA</div>
+  <h1 class="fade-up delay-1">
+    Building <em>intelligent</em><br>data systems that<br>drive decisions.
+  </h1>
+  <p class="hero-sub fade-up delay-2">
+    AI-native analytics engineer with 4+ years shipping production ML pipelines, clinical NLP, and self-serve analytics platforms — currently at Johnson &amp; Johnson.
+  </p>
+  <div class="hero-actions fade-up delay-3">
+    <a href="#projects" class="btn-primary">View Projects</a>
+    <a href="https://github.com/bhavanbk2" target="_blank" class="btn-ghost">GitHub ↗</a>
+    <a href="https://scholar.google.com/citations?user=HNc1CBIAAAAJ&hl=en" target="_blank" class="btn-ghost">Research ↗</a>
   </div>
-  <div class="grid2">
-    <div class="card">
-      <h3>Current role</h3>
-      <p class="sub" style="margin-bottom:0.5rem">Data Analyst / Senior Data Scientist · Johnson &amp; Johnson · Feb 2025–present</p>
-      <ul>
-        <li>AI-driven patient adherence &amp; demand forecasting</li>
-        <li>BERT/NLP on clinical notes and regulatory docs</li>
-        <li>AWS QuickSight, Tableau, Power BI dashboards</li>
-        <li>GxP-compliant CI/CD with Docker &amp; Kubernetes</li>
-      </ul>
+  <div class="hero-stats fade-up delay-4">
+    <div>
+      <div class="stat-val">4+</div>
+      <div class="stat-label">Years Experience</div>
     </div>
-    <div class="card">
-      <h3>Education</h3>
-      <p class="sub" style="margin-bottom:0.5rem">MS Data Analytics · San Jose State University · Dec 2024</p>
-      <p class="sub">BE Computer Science · Anna University Chennai · May 2021</p>
-      <hr class="divider">
-      <h3>Certifications</h3>
-      <ul>
-        <li>Azure Fabric Analytics Engineer Associate</li>
-        <li>AWS Data Engineer Associate</li>
-        <li>Azure Fundamentals</li>
-      </ul>
+    <div>
+      <div class="stat-val">3</div>
+      <div class="stat-label">Companies</div>
+    </div>
+    <div>
+      <div class="stat-val">18%</div>
+      <div class="stat-label">Stock-out Reduction at J&amp;J</div>
+    </div>
+    <div>
+      <div class="stat-val">40%</div>
+      <div class="stat-label">Faster Time-to-Insight</div>
     </div>
   </div>
-  <div class="card" style="margin-top:0.75rem">
-    <h3>Core identity in one line</h3>
-    <p style="margin-top:0.5rem">AI-native analytics engineer — builds ML pipelines, ETL infrastructure, and self-serve BI platforms that translate complex data into clinical and business decisions, from prototype to production.</p>
-  </div>
 </div>
 
-<div id="elevator" class="tab-content">
-  <div class="section-label">30-second pitch</div>
-  <div class="card">
-    <p style="line-height:1.85">"I'm a Senior Data Scientist with four-plus years of experience building production-grade ML systems and analytics platforms — most recently at Johnson &amp; Johnson. At J&amp;J I've been working on AI-driven patient adherence forecasting and NLP pipelines over clinical notes using BERT, deployed on AWS. Before that I was at Quantiphi building ETL pipelines and forecasting models, and at Orion Technolab where I led demand forecasting and inventory optimization end-to-end. I finished my Master's in Data Analytics from San Jose State last December. My sweet spot is the full stack — from raw data engineering through modeling and all the way to dashboards that executives actually use. I'm also actively publishing research on healthcare ML and privacy-preserving models."</p>
-    <hr class="divider">
-    <p class="sub">Tips: Pause after "J&amp;J" to let them ask about the role. End with a question: <em>"Could you tell me more about what the team is focused on right now?"</em></p>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">About</h2>
+    <div class="section-rule"></div>
   </div>
-  <div class="card" style="margin-top:0.75rem">
-    <h3>Closing hook (for GenAI / LLM roles)</h3>
-    <p style="margin-top:0.5rem;line-height:1.85">"I'm particularly energized by the LLM and RAG space — I use Claude and ChatGPT daily in my work, and I've been upskilling on agentic frameworks, FastAPI, and MLOps tooling for LLM pipelines. Healthcare AI is where I think the most meaningful impact happens, which is why roles at the intersection of GenAI and clinical or life-sciences data are especially exciting to me."</p>
+  <div class="grid">
+    <div>
+      <p class="bio">
+        I'm a Senior Data Scientist who lives at the intersection of <strong>machine learning engineering</strong>, <strong>clinical data</strong>, and <strong>scalable analytics infrastructure</strong>. My work at Johnson &amp; Johnson involves building AI-driven forecasting systems for patient adherence, deploying BERT-based NLP over clinical notes, and delivering BI dashboards that translate model outputs into decisions executives can act on.
+      </p>
+      <p class="bio" style="margin-top:1rem;">
+        Before J&amp;J, I led demand forecasting and inventory optimization at Orion Technolab — end-to-end, from ETL pipelines through LSTM models to production APIs. I hold an <strong>MS in Data Analytics from San Jose State University</strong> (Dec 2024) and am actively publishing research on privacy-preserving ML for healthcare.
+      </p>
+      <p class="bio" style="margin-top:1rem;">
+        I'm a daily user of AI coding tools (Claude, ChatGPT, Cursor) and am upskilling on <strong>RAG architectures</strong>, <strong>agentic frameworks</strong>, and <strong>LLM pipelines</strong> — looking for roles where clinical domain expertise meets the frontier of GenAI.
+      </p>
+      <div class="info-block">
+        <div class="info-row">
+          <span class="info-key">Location</span>
+          <span class="info-val">Bay Area, CA (Los Altos / Palo Alto)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Email</span>
+          <span class="info-val"><a href="mailto:bhavanb2000@gmail.com">bhavanb2000@gmail.com</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Phone</span>
+          <span class="info-val">408-581-4706</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">GitHub</span>
+          <span class="info-val"><a href="https://github.com/bhavanbk2" target="_blank">github.com/bhavanbk2</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Research</span>
+          <span class="info-val"><a href="https://scholar.google.com/citations?user=HNc1CBIAAAAJ&hl=en" target="_blank">Google Scholar</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Visa</span>
+          <span class="info-val">H1B sponsorship required</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;">HIGH5 Strengths</p>
+      <div class="strengths-grid">
+        <div class="strength-pill"><span class="num">1</span> Coach</div>
+        <div class="strength-pill"><span class="num">2</span> Self-Believer</div>
+        <div class="strength-pill"><span class="num">3</span> Storyteller</div>
+        <div class="strength-pill"><span class="num">4</span> Commander</div>
+        <div class="strength-pill" style="grid-column:1/-1"><span class="num">5</span> Deliverer</div>
+      </div>
+      <p style="font-size:12.5px;color:var(--dim);margin-top:1rem;line-height:1.65;">
+        Independently certified · Oct 2025. Coach + Storyteller + Deliverer = someone who builds reliable systems <em>and</em> communicates their impact clearly to any audience.
+      </p>
+    </div>
   </div>
-</div>
+</section>
 
-<div id="experience" class="tab-content">
-  <div class="section-label">timeline</div>
-  <div class="card" style="margin-bottom:0.75rem">
-    <div class="row-flex">
-      <div class="accent-bar" style="min-height:80px;background:#185FA5"></div>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <div class="timeline-period">Feb 2025 — Present</div>
+        <div class="timeline-company current">Johnson &amp; Johnson</div>
+        <div class="timeline-loc">USA</div>
+      </div>
       <div>
-        <h3>Johnson &amp; Johnson, USA</h3>
-        <p class="tag-line">Data Analyst (de facto Senior Data Scientist) · Feb 2025 – present</p>
-        <ul style="margin-top:0.5rem">
-          <li>Built production ML models for clinical risk prediction &amp; patient outcome analysis (Python, TensorFlow, scikit-learn) — improved prediction accuracy 15%</li>
-          <li>AWS QuickSight / Tableau / Power BI dashboards tracking operational KPIs — 30% faster decision cycles</li>
-          <li>BERT + Hugging Face NLP pipeline over unstructured clinical notes — 30% reduction in manual review</li>
-          <li>GxP-aligned CI/CD with GitHub, Docker, Kubernetes — end-to-end data governance</li>
-          <li>Led cross-functional data partnership across Product, Operations, Research</li>
-          <li>AI tools (Claude, ChatGPT) daily for SQL optimization, dbt docs, prototyping — 3× speed gains</li>
-        </ul>
+        <div class="timeline-role">Data Analyst / Senior Data Scientist</div>
+        <div class="timeline-desc">
+          Built production ML models for clinical risk prediction and patient outcome analysis using Python, TensorFlow, and scikit-learn. Deployed BERT + Hugging Face NLP pipelines over unstructured clinical notes and regulatory documents, reducing manual review by 30%. Owned end-to-end data governance with GitHub CI/CD, Docker, and Kubernetes — GxP-aligned. Designed AWS QuickSight, Tableau, and Power BI dashboards tracking operational KPIs and model performance for cross-functional teams including Product, Operations, and Research.
+        </div>
+        <div class="impact-chips">
+          <span class="impact-chip green">↑15% prediction accuracy</span>
+          <span class="impact-chip green">↓30% manual review</span>
+          <span class="impact-chip">30% faster decisions</span>
+          <span class="impact-chip">3× dev speed via AI tools</span>
+          <span class="impact-chip amber">GxP / regulatory compliant</span>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="card" style="margin-bottom:0.75rem">
-    <div class="row-flex">
-      <div class="accent-bar" style="min-height:80px;background:#0F6E56"></div>
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <div class="timeline-period">Feb 2024 — Jun 2024</div>
+        <div class="timeline-company">Quantiphi</div>
+        <div class="timeline-loc">Massachusetts, USA</div>
+      </div>
       <div>
-        <h3>Quantiphi, MA</h3>
-        <p class="tag-line">Data Analyst · Feb 2024 – Jun 2024</p>
-        <ul style="margin-top:0.5rem">
-          <li>Scalable ETL pipelines with Python, SQL, Airflow — 35% pipeline efficiency improvement</li>
-          <li>Tableau self-serve dashboards — eliminated 50+ monthly ad-hoc requests</li>
-          <li>A/B testing &amp; statistical analysis for RNN/LSTM forecasting models — 22% accuracy improvement</li>
-        </ul>
+        <div class="timeline-role">Data Analyst</div>
+        <div class="timeline-desc">
+          Built scalable ETL pipelines and data transformation workflows using Python (Pandas, NumPy), SQL, and Apache Airflow. Developed self-serve Tableau dashboards for customer support and operational metrics, eliminating 50+ monthly ad-hoc requests. Conducted A/B testing and statistical analysis to evaluate RNN/LSTM forecasting models for time-series predictions.
+        </div>
+        <div class="impact-chips">
+          <span class="impact-chip green">35% pipeline efficiency</span>
+          <span class="impact-chip green">22% forecast accuracy</span>
+          <span class="impact-chip">Eliminated 50+ monthly reports</span>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="row-flex">
-      <div class="accent-bar" style="min-height:80px;background:#854F0B"></div>
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <div class="timeline-period">May 2020 — Dec 2022</div>
+        <div class="timeline-company">Orion Technolab</div>
+        <div class="timeline-loc">India</div>
+      </div>
       <div>
-        <h3>Orion Technolab, India</h3>
-        <p class="tag-line">Data Analyst / Data Scientist · May 2020 – Dec 2022</p>
-        <ul style="margin-top:0.5rem">
-          <li>Demand forecasting &amp; inventory optimization — 20% accuracy improvement, 15% stockout reduction</li>
-          <li>ETL via Kafka, Airflow, SQL (MySQL, MongoDB, Redis) — 40% data prep time reduction</li>
-          <li>NLP with SpaCy/NLTK for sentiment analysis + BERT for classification — 25% accuracy gain</li>
-          <li>CNN/GAN models for product quality image inspection — 28% defect detection improvement</li>
-          <li>Flask/FastAPI model deployment — 35% reduction in deployment time</li>
-        </ul>
+        <div class="timeline-role">Data Analyst / Data Scientist</div>
+        <div class="timeline-desc">
+          Led end-to-end demand forecasting and inventory optimization — from ETL (Kafka, Airflow, SQL) through LSTM/ARIMA modeling to production REST APIs. Built NLP pipelines with SpaCy and NLTK for sentiment analysis over 1M+ customer reviews. Trained CNN and GAN models for product image defect detection. Deployed all systems with Flask/FastAPI, Docker, CI/CD, and CloudWatch monitoring.
+        </div>
+        <div class="impact-chips">
+          <span class="impact-chip green">20% forecast accuracy</span>
+          <span class="impact-chip green">↓15% stockouts</span>
+          <span class="impact-chip green">28% defect detection</span>
+          <span class="impact-chip">35% faster deployments</span>
+          <span class="impact-chip amber">40% less data prep time</span>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div id="projects" class="tab-content">
-  <div class="section-label">flagship projects — use these as STAR stories</div>
-  <div class="card" style="margin-bottom:0.75rem">
-    <h3>Patient Adherence &amp; Demand Forecasting · J&amp;J</h3>
-    <p class="sub" style="margin-bottom:0.75rem">Python · TensorFlow · BERT · AWS Glue · Snowflake/Redshift · Tableau · Power BI · AWS SageMaker</p>
-    <div class="qa-item">
-      <div class="qa-q">Situation &amp; Task</div>
-      <div class="qa-a">Unpredictable patient adherence caused medication stock-outs and excess inventory across multiple therapy areas and geographies. Data was fragmented across clinical trial systems, EHR, and sales warehouses.</div>
-    </div>
-    <div class="qa-item">
-      <div class="qa-q">Action</div>
-      <div class="qa-a">Built automated ETL pipelines (AWS Glue, SQL on Snowflake/Redshift) over 250M+ structured rows and 30M+ clinical text records. Developed deep learning models (LSTM + feed-forward, TensorFlow) for adherence and demand prediction. Fine-tuned BERT for NLP on physician notes to detect adverse event patterns. Delivered Tableau/Power BI dashboards with predictive KPIs for executives. Deployed on AWS SageMaker with CI/CD and drift monitoring.</div>
-    </div>
-    <div class="qa-item" style="margin-bottom:0">
-      <div class="qa-q">Result</div>
-      <div class="qa-a"><strong>18% reduction in stock-outs · 40% faster time-to-insight · 30% less manual clinical review</strong></div>
-    </div>
   </div>
-  <div class="card" style="margin-bottom:0.75rem">
-    <h3>Demand Forecasting &amp; Inventory Optimization · Orion Technolab</h3>
-    <p class="sub" style="margin-bottom:0.75rem">Python · R · LSTM · ARIMA · Prophet · XGBoost · SpaCy · Flask/FastAPI · Docker · AWS Lambda</p>
-    <div class="qa-item">
-      <div class="qa-q">Situation &amp; Task</div>
-      <div class="qa-a">Retail clients faced frequent stockouts and overstock from inaccurate SKU-level demand predictions. 50M+ transaction rows across 3+ years, siloed across ERP and external APIs.</div>
-    </div>
-    <div class="qa-item">
-      <div class="qa-q">Action</div>
-      <div class="qa-a">End-to-end system: ETL pipelines (SQL + AWS Glue → Redshift/Snowflake), LSTM forecasting model (beat ARIMA/Prophet/XGBoost), NLP pipeline (SpaCy/NLTK) on 1M+ customer reviews for sentiment features, CNN/GAN defect detection, REST APIs via Flask/FastAPI with Docker + CloudWatch monitoring.</div>
-    </div>
-    <div class="qa-item" style="margin-bottom:0">
-      <div class="qa-q">Result</div>
-      <div class="qa-a"><strong>20% forecast accuracy improvement · 15% stockout reduction · 35% faster deployments · 30% BI reporting time saved</strong></div>
-    </div>
-  </div>
-  <div class="card">
-    <h3>Research: Healthcare ML &amp; Biomedical Signal Classification</h3>
-    <p class="sub" style="margin-bottom:0.75rem">Google Scholar profile active · JMIR AI paper on privacy-preserving ML for behavioral health signal detection · LSTM-GPT-4 biomedical signal classification</p>
-    <p>Peer-reviewed publishing demonstrates ability to work at the research frontier of clinical AI — useful talking point for healthcare AI and GenAI roles.</p>
-  </div>
-</div>
+</section>
 
-<div id="skills" class="tab-content">
-  <div class="section-label">technical stack</div>
-  <div class="grid2">
-    <div class="card">
-      <h3>Languages &amp; Query</h3>
-      <div class="chip-row">
-        <span class="chip blue">SQL (Expert)</span>
-        <span class="chip blue">Python</span>
-        <span class="chip blue">R</span>
-        <span class="chip">Pandas / NumPy</span>
-        <span class="chip">PySpark</span>
-      </div>
-    </div>
-    <div class="card">
-      <h3>ML &amp; Deep Learning</h3>
-      <div class="chip-row">
-        <span class="chip teal">TensorFlow</span>
-        <span class="chip teal">PyTorch</span>
-        <span class="chip teal">Scikit-learn</span>
-        <span class="chip teal">Keras</span>
-        <span class="chip teal">BERT / HuggingFace</span>
-        <span class="chip teal">LSTM</span>
-        <span class="chip teal">XGBoost</span>
-        <span class="chip teal">MLflow</span>
-      </div>
-    </div>
-    <div class="card">
-      <h3>Cloud &amp; Data Platforms</h3>
-      <div class="chip-row">
-        <span class="chip amber">AWS S3 / Glue / Redshift</span>
-        <span class="chip amber">AWS SageMaker</span>
-        <span class="chip amber">AWS Lambda / Athena</span>
-        <span class="chip amber">Snowflake</span>
-        <span class="chip amber">Databricks</span>
-        <span class="chip amber">BigQuery</span>
-        <span class="chip amber">Azure</span>
-      </div>
-    </div>
-    <div class="card">
-      <h3>Data Engineering</h3>
-      <div class="chip-row">
-        <span class="chip coral">dbt</span>
-        <span class="chip coral">Apache Airflow</span>
-        <span class="chip coral">Apache Kafka</span>
-        <span class="chip coral">Apache Spark</span>
-        <span class="chip coral">ETL / ELT</span>
-        <span class="chip coral">Data Modeling</span>
-      </div>
-    </div>
-    <div class="card">
-      <h3>BI &amp; Visualization</h3>
-      <div class="chip-row">
-        <span class="chip blue">Tableau</span>
-        <span class="chip blue">Power BI</span>
-        <span class="chip blue">AWS QuickSight</span>
-        <span class="chip blue">Looker</span>
-        <span class="chip blue">Sigma</span>
-        <span class="chip blue">Amplitude</span>
-      </div>
-    </div>
-    <div class="card">
-      <h3>MLOps &amp; DevOps</h3>
-      <div class="chip-row">
-        <span class="chip teal">Docker</span>
-        <span class="chip teal">Kubernetes</span>
-        <span class="chip teal">CI/CD</span>
-        <span class="chip teal">GitHub Actions</span>
-        <span class="chip teal">FastAPI</span>
-        <span class="chip teal">Flask</span>
-      </div>
-    </div>
-    <div class="card">
-      <h3>NLP &amp; LLMs</h3>
-      <div class="chip-row">
-        <span class="chip amber">BERT / Transformers</span>
-        <span class="chip amber">SpaCy / NLTK</span>
-        <span class="chip amber">RAG (upskilling)</span>
-        <span class="chip amber">LLM pipelines</span>
-        <span class="chip amber">Agentic frameworks</span>
-        <span class="chip amber">GPT-4 integration</span>
-      </div>
-    </div>
-    <div class="card">
-      <h3>Databases</h3>
-      <div class="chip-row">
-        <span class="chip coral">MySQL</span>
-        <span class="chip coral">PostgreSQL</span>
-        <span class="chip coral">MongoDB</span>
-        <span class="chip coral">Redis</span>
-        <span class="chip coral">Redshift</span>
-      </div>
-    </div>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Key Projects</h2>
+    <div class="section-rule"></div>
   </div>
-</div>
+  <div class="cards">
 
-<div id="strengths" class="tab-content">
-  <div class="section-label">HIGH5 strengths — how to use in interviews</div>
-  <div class="grid2">
-    <div class="card">
-      <h3>1. Coach</h3>
-      <p class="sub" style="margin-bottom:0.5rem">Discovers potential in people, drives others' growth</p>
-      <p><em>Framing:</em> "I mentored junior data scientists at J&amp;J on NLP preprocessing and model validation. I also built reusable documentation and code templates so the team could scale without bottlenecks."</p>
+    <div class="proj-card">
+      <div class="proj-card-top">
+        <div class="proj-icon blue">🧬</div>
+        <span class="proj-badge healthcare">Healthcare AI</span>
+      </div>
+      <div class="proj-title">Patient Adherence &amp; Demand Forecasting</div>
+      <div class="proj-desc">
+        AI-driven system to predict patient adherence and optimize therapy demand across multiple regions for J&amp;J. Integrated 250M+ structured records and 30M+ clinical text entries. Built BERT NLP for adverse event detection and deployed via AWS SageMaker with drift monitoring.
+      </div>
+      <div class="proj-metrics">
+        <div class="proj-metric">
+          <div class="proj-metric-val">18%</div>
+          <div class="proj-metric-label">Stock-out reduction</div>
+        </div>
+        <div class="proj-metric">
+          <div class="proj-metric-val">40%</div>
+          <div class="proj-metric-label">Faster insights</div>
+        </div>
+      </div>
+      <div class="proj-stack">
+        <span class="proj-tag">Python</span>
+        <span class="proj-tag">TensorFlow</span>
+        <span class="proj-tag">BERT</span>
+        <span class="proj-tag">AWS Glue</span>
+        <span class="proj-tag">Snowflake</span>
+        <span class="proj-tag">SageMaker</span>
+        <span class="proj-tag">Tableau</span>
+        <span class="proj-tag">Power BI</span>
+      </div>
     </div>
-    <div class="card">
-      <h3>2. Self-Believer</h3>
-      <p class="sub" style="margin-bottom:0.5rem">Independent, confident, self-sufficient</p>
-      <p><em>Framing:</em> "I take end-to-end ownership — from data engineering through model deployment and stakeholder presentation. I don't wait to be told what to build; I identify the problem and drive the solution."</p>
-    </div>
-    <div class="card">
-      <h3>3. Storyteller</h3>
-      <p class="sub" style="margin-bottom:0.5rem">Master communicator, translates complexity</p>
-      <p><em>Framing:</em> "I regularly present complex ML outputs to clinical, supply chain, and executive teams — translating model results into business recommendations they can act on immediately."</p>
-    </div>
-    <div class="card">
-      <h3>4. Commander</h3>
-      <p class="sub" style="margin-bottom:0.5rem">Takes charge, direct, drives decisions</p>
-      <p><em>Framing:</em> "I've led cross-functional projects across engineering, clinical, and product teams. I don't shy from surfacing trade-offs and pushing for decisions when ambiguity stalls progress."</p>
-    </div>
-    <div class="card">
-      <h3>5. Deliverer</h3>
-      <p class="sub" style="margin-bottom:0.5rem">Follows through, builds trust through reliability</p>
-      <p><em>Framing:</em> "I have a strong track record of shipping production-ready systems — not just prototypes. From CI/CD pipelines to SageMaker-deployed models, I see projects through to measurable outcomes."</p>
-    </div>
-  </div>
-</div>
 
-<div id="qa" class="tab-content">
-  <div class="section-label">common screening questions — ready answers</div>
-  <div class="qa-item">
-    <div class="qa-q">Tell me about yourself / walk me through your background</div>
-    <div class="qa-a">→ Use the 30-second pitch on the Elevator Pitch tab. Lead with J&amp;J, anchor to MS from SJSU, close with "I'm now looking for a role where I can go deeper on GenAI/LLM pipelines in a healthcare or data-intensive context."</div>
-  </div>
-  <div class="qa-item">
-    <div class="qa-q">What's your experience with LLMs / GenAI?</div>
-    <div class="qa-a">Daily user of Claude and ChatGPT for development acceleration. Research-level work with GPT-4 integration for biomedical signal classification (published). Currently upskilling on RAG architectures, agentic frameworks, and FastAPI for LLM APIs. BERT fine-tuning on clinical text at J&amp;J is hands-on transformer work at the model level.</div>
-  </div>
-  <div class="qa-item">
-    <div class="qa-q">Describe a complex data pipeline you built</div>
-    <div class="qa-a">→ J&amp;J project: 250M+ rows across clinical, sales, and real-world data ingested via AWS Glue into Snowflake/Redshift. Added NLP on 30M+ clinical text records. Automated refresh, data quality checks, GxP-compliant version control. Cut manual data prep by 40%. (See Projects tab for full STAR.)</div>
-  </div>
-  <div class="qa-item">
-    <div class="qa-q">What's your experience with SQL?</div>
-    <div class="qa-a">Expert level — complex joins, window functions (RANK, ROW_NUMBER, LEAD/LAG), CTEs, performance optimization (partitioning, pushdown predicates on Redshift/Snowflake). Use it daily at J&amp;J for clinical data querying and dashboard data modeling.</div>
-  </div>
-  <div class="qa-item">
-    <div class="qa-q">How have you handled working with messy / unstructured data?</div>
-    <div class="qa-a">At J&amp;J: physician notes and patient feedback — tokenization, PHI removal, medical abbreviation normalization, custom stop words, then fine-tuned BERT for adverse event detection. At Orion: multilingual customer reviews — language detection, lemmatization, SpaCy pipeline into sentiment features that fed the forecasting model.</div>
-  </div>
-  <div class="qa-item">
-    <div class="qa-q">Tell me about your experience with healthcare data</div>
-    <div class="qa-a">Current role is entirely healthcare — clinical trial data, EHR, patient adherence records, pharmacovigilance, GxP compliance. Research background includes JMIR paper on privacy-preserving ML for behavioral health signal detection and LSTM-GPT-4 biomedical signal classification. Deep understanding of regulatory sensitivity around patient data.</div>
-  </div>
-  <div class="qa-item">
-    <div class="qa-q">Why are you looking to leave / why this role?</div>
-    <div class="qa-a">Frame positively: "I'm excited to go deeper into GenAI and LLM-native systems. My work at J&amp;J has been transformative for my understanding of healthcare data at scale, and I want to take that clinical domain expertise into a role that's building the next generation of AI applications in that space."</div>
-  </div>
-  <div class="qa-item">
-    <div class="qa-q">Do you require visa sponsorship?</div>
-    <div class="qa-a">Be direct and early: "Yes, I require H1B sponsorship. I'm currently on [OPT/relevant status] and have a clean transfer process." Then pivot: "I've been told my skill set in healthcare AI and ML engineering is strong — happy to discuss timeline if that's a consideration."</div>
-  </div>
-  <div class="qa-item">
-    <div class="qa-q">What are your salary expectations?</div>
-    <div class="qa-a">Research the range before the call (Sr. Data Scientist / Applied AI in Bay Area: typically $160K–$220K base). Deflect if early: "I'm open to understanding the full comp package and scope. Can you share the budgeted range for the role?"</div>
-  </div>
-  <div class="qa-item" style="margin-bottom:0">
-    <div class="qa-q">Questions to ask the recruiter</div>
-    <div class="qa-a">1. What does the team's current AI/ML stack look like? 2. What does success look like in the first 90 days? 3. Is the team primarily engineering-focused or is there a heavy analytics/BI component? 4. What's the sponsorship process and typical timeline? 5. Is this a new headcount or a backfill?</div>
-  </div>
-</div>
+    <div class="proj-card">
+      <div class="proj-card-top">
+        <div class="proj-icon green">📦</div>
+        <span class="proj-badge retail">Retail AI</span>
+      </div>
+      <div class="proj-title">Intelligent Demand Forecasting &amp; Inventory Optimization</div>
+      <div class="proj-desc">
+        End-to-end system replacing manual spreadsheet forecasting for retail clients. Built automated ETL, compared ARIMA/Prophet/XGBoost/LSTM models, and integrated NLP sentiment features from 1M+ customer reviews. Deployed as REST APIs with serverless infrastructure and live monitoring.
+      </div>
+      <div class="proj-metrics">
+        <div class="proj-metric">
+          <div class="proj-metric-val">20%</div>
+          <div class="proj-metric-label">Forecast accuracy</div>
+        </div>
+        <div class="proj-metric">
+          <div class="proj-metric-val">15%</div>
+          <div class="proj-metric-label">Stockout reduction</div>
+        </div>
+      </div>
+      <div class="proj-stack">
+        <span class="proj-tag">LSTM</span>
+        <span class="proj-tag">XGBoost</span>
+        <span class="proj-tag">SpaCy</span>
+        <span class="proj-tag">AWS Glue</span>
+        <span class="proj-tag">FastAPI</span>
+        <span class="proj-tag">Docker</span>
+        <span class="proj-tag">CloudWatch</span>
+      </div>
+    </div>
 
-</div>
+    <div class="proj-card">
+      <div class="proj-card-top">
+        <div class="proj-icon amber">🔬</div>
+        <span class="proj-badge research">Research</span>
+      </div>
+      <div class="proj-title">Healthcare ML Research &amp; Publication</div>
+      <div class="proj-desc">
+        Active peer-reviewed research on privacy-preserving ML for behavioral health signal detection (JMIR AI) and LSTM-GPT-4 integration for biomedical signal classification. Demonstrates frontier-level clinical AI work beyond production engineering.
+      </div>
+      <div class="proj-metrics">
+        <div class="proj-metric">
+          <div class="proj-metric-val">2+</div>
+          <div class="proj-metric-label">Publications</div>
+        </div>
+        <div class="proj-metric">
+          <div class="proj-metric-val">JMIR</div>
+          <div class="proj-metric-label">Target journal</div>
+        </div>
+      </div>
+      <div class="proj-stack">
+        <span class="proj-tag">GPT-4</span>
+        <span class="proj-tag">LSTM</span>
+        <span class="proj-tag">Privacy-ML</span>
+        <span class="proj-tag">Biomedical NLP</span>
+        <span class="proj-tag">Signal Classification</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-card-top">
+        <div class="proj-icon blue">🏭</div>
+        <span class="proj-badge retail">Computer Vision</span>
+      </div>
+      <div class="proj-title">Product Quality Defect Detection</div>
+      <div class="proj-desc">
+        CNN and GAN-based visual inspection system to classify manufacturing defects. Used transfer learning (ResNet, EfficientNet) and GAN-generated synthetic samples to overcome limited defective image data. Deployed as a lightweight inference API for QC teams.
+      </div>
+      <div class="proj-metrics">
+        <div class="proj-metric">
+          <div class="proj-metric-val">28%</div>
+          <div class="proj-metric-label">Detection improvement</div>
+        </div>
+        <div class="proj-metric">
+          <div class="proj-metric-val">Real-time</div>
+          <div class="proj-metric-label">API inference</div>
+        </div>
+      </div>
+      <div class="proj-stack">
+        <span class="proj-tag">CNN</span>
+        <span class="proj-tag">GAN</span>
+        <span class="proj-tag">ResNet</span>
+        <span class="proj-tag">TensorFlow</span>
+        <span class="proj-tag">Flask</span>
+        <span class="proj-tag">Docker</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Skills &amp; Stack</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="skill-groups">
+    <div class="skill-group">
+      <div class="skill-group-label">Languages</div>
+      <div class="skill-list">
+        <span class="skill-tag">SQL (Expert)</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">R</span>
+        <span class="skill-tag">PySpark</span>
+        <span class="skill-tag">Pandas / NumPy</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">ML &amp; Deep Learning</div>
+      <div class="skill-list">
+        <span class="skill-tag">TensorFlow</span>
+        <span class="skill-tag">PyTorch</span>
+        <span class="skill-tag">Scikit-learn</span>
+        <span class="skill-tag">Keras</span>
+        <span class="skill-tag">XGBoost</span>
+        <span class="skill-tag">LSTM</span>
+        <span class="skill-tag">MLflow</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">NLP &amp; LLMs</div>
+      <div class="skill-list">
+        <span class="skill-tag">BERT / HuggingFace</span>
+        <span class="skill-tag">Transformers</span>
+        <span class="skill-tag">SpaCy / NLTK</span>
+        <span class="skill-tag">GPT-4</span>
+        <span class="skill-tag">RAG</span>
+        <span class="skill-tag">Agentic frameworks</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Cloud &amp; Data Platforms</div>
+      <div class="skill-list">
+        <span class="skill-tag">AWS S3 / Glue</span>
+        <span class="skill-tag">Redshift</span>
+        <span class="skill-tag">SageMaker</span>
+        <span class="skill-tag">Lambda</span>
+        <span class="skill-tag">Snowflake</span>
+        <span class="skill-tag">Databricks</span>
+        <span class="skill-tag">BigQuery</span>
+        <span class="skill-tag">Azure</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Data Engineering</div>
+      <div class="skill-list">
+        <span class="skill-tag">dbt</span>
+        <span class="skill-tag">Apache Airflow</span>
+        <span class="skill-tag">Apache Kafka</span>
+        <span class="skill-tag">Spark</span>
+        <span class="skill-tag">ETL / ELT</span>
+        <span class="skill-tag">Data Modeling</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">BI &amp; Visualization</div>
+      <div class="skill-list">
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">AWS QuickSight</span>
+        <span class="skill-tag">Looker</span>
+        <span class="skill-tag">Sigma</span>
+        <span class="skill-tag">Amplitude</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">MLOps &amp; DevOps</div>
+      <div class="skill-list">
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">CI/CD</span>
+        <span class="skill-tag">GitHub Actions</span>
+        <span class="skill-tag">FastAPI</span>
+        <span class="skill-tag">Flask</span>
+        <span class="skill-tag">CloudWatch</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Databases</div>
+      <div class="skill-list">
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">Redis</span>
+        <span class="skill-tag">Redshift</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Education &amp; Certifications</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="edu-grid">
+    <div>
+      <div class="edu-card">
+        <div class="edu-degree">MS in Data Analytics</div>
+        <div class="edu-school">San Jose State University, CA</div>
+        <span class="edu-year">Dec 2024</span>
+      </div>
+      <div class="edu-card" style="margin-top:1rem;">
+        <div class="edu-degree">BE in Computer Science</div>
+        <div class="edu-school">Anna University, Chennai</div>
+        <span class="edu-year">May 2021</span>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;">Certifications</p>
+      <div class="cert-list">
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          Azure Fabric Analytics Engineer Associate
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          AWS Data Engineer Associate
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          Azure Fundamentals
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin:1.5rem 0 0.75rem;">Research</p>
+      <div class="cert-list">
+        <div class="cert-item" style="gap:10px;flex-direction:column;align-items:flex-start;">
+          <div style="display:flex;align-items:center;gap:10px;width:100%">
+            <div class="cert-dot" style="background:var(--accent)"></div>
+            <span style="font-weight:500;">JMIR AI</span>
+            <span style="font-size:11px;color:var(--dim);margin-left:auto;">Active</span>
+          </div>
+          <span style="font-size:12.5px;color:var(--muted);padding-left:16px;">Privacy-preserving ML for behavioral health signal detection</span>
+        </div>
+        <div class="cert-item" style="gap:10px;flex-direction:column;align-items:flex-start;">
+          <div style="display:flex;align-items:center;gap:10px;width:100%">
+            <div class="cert-dot" style="background:var(--accent)"></div>
+            <span style="font-weight:500;">Biomedical Signal Classification</span>
+          </div>
+          <span style="font-size:12.5px;color:var(--muted);padding-left:16px;">LSTM + GPT-4 integration for biomedical signal classification</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div style="max-width:600px;margin:0 auto;">
+    <h2>Let's build something<br><em style="font-style:italic;color:var(--accent2)">meaningful</em> together.</h2>
+    <p class="sub">
+      Open to Senior Data Scientist, Applied AI Engineer, and ML Engineering roles. H1B sponsorship required.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:bhavanb2000@gmail.com" class="contact-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        bhavanb2000@gmail.com
+      </a>
+      <a href="https://github.com/bhavanbk2" target="_blank" class="contact-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="https://scholar.google.com/citations?user=HNc1CBIAAAAJ&hl=en" target="_blank" class="contact-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        Google Scholar
+      </a>
+      <a href="tel:4085814706" class="contact-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.67a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.85a16 16 0 006.29 6.29l1.21-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        408-581-4706
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Bhavan Kumar Basvaraju · Built with care · Bay Area, CA</p>
+</footer>
+
 <script>
-function show(id,btn){
-  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
-}
+const sections = document.querySelectorAll('section[id], div[id="hero"]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+sections.forEach(s => observer.observe(s));
+
+const animEls = document.querySelectorAll('.timeline-item, .proj-card, .skill-group, .edu-card, .cert-item');
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+animEls.forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+  revealObserver.observe(el);
+});
 </script>
 </body>
 </html>
