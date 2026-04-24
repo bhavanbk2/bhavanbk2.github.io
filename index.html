@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhavan Kumar Basvaraju — Senior Data Scientist</title>
+<title>Bhavan Kumar Basvaraju — Data Analytics Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -25,9 +25,7 @@
   --sans: 'DM Sans', system-ui, sans-serif;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
 body {
   background: var(--bg);
   color: var(--text);
@@ -36,8 +34,6 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
 }
-
-/* ─── NOISE TEXTURE ─── */
 body::before {
   content: '';
   position: fixed;
@@ -47,8 +43,6 @@ body::before {
   z-index: 0;
   opacity: 0.4;
 }
-
-/* ─── NAV ─── */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -96,7 +90,6 @@ nav {
 }
 .nav-cta:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.25); }
 
-/* ─── HERO ─── */
 #hero {
   min-height: 100vh;
   display: flex;
@@ -176,7 +169,6 @@ h1 em {
   background: transparent;
 }
 .btn-ghost:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.04); }
-
 .hero-stats {
   display: flex;
   gap: 3rem;
@@ -192,7 +184,6 @@ h1 em {
 }
 .stat-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
 
-/* ─── SECTION SHELL ─── */
 section {
   position: relative;
   z-index: 1;
@@ -225,7 +216,6 @@ section {
   margin-left: 1rem;
 }
 
-/* ─── ABOUT ─── */
 #about .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -246,7 +236,6 @@ section {
 .info-val { color: var(--text); }
 .info-val a { color: var(--accent); text-decoration: none; }
 .info-val a:hover { text-decoration: underline; }
-
 .strengths-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -270,11 +259,10 @@ section {
   line-height: 1;
 }
 
-/* ─── EXPERIENCE ─── */
 #experience .timeline { position: relative; }
 .timeline-item {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 220px 1fr;
   gap: 3rem;
   padding: 2.5rem 0;
   border-top: 1px solid var(--border);
@@ -290,6 +278,13 @@ section {
 }
 .timeline-company.current { color: var(--accent); }
 .timeline-loc { font-size: 12px; color: var(--dim); }
+.timeline-type {
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
 .timeline-role { font-size: 1rem; font-weight: 500; margin-bottom: 0.75rem; color: var(--text); }
 .timeline-desc { font-size: 14px; color: var(--muted); line-height: 1.75; font-weight: 300; }
 .impact-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem; }
@@ -318,7 +313,6 @@ section {
   color: var(--accent4);
 }
 
-/* ─── PROJECTS ─── */
 #projects .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -383,7 +377,6 @@ section {
   border: 1px solid var(--border);
 }
 
-/* ─── SKILLS ─── */
 #skills .skill-groups {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -427,7 +420,6 @@ section {
 }
 .skill-tag:hover { border-color: var(--border2); background: rgba(255,255,255,0.07); }
 
-/* ─── EDUCATION & CERTS ─── */
 #education .edu-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -472,7 +464,6 @@ section {
   flex-shrink: 0;
 }
 
-/* ─── CONTACT ─── */
 #contact {
   text-align: center;
   padding: 6rem 3rem;
@@ -500,7 +491,6 @@ section {
 }
 .contact-link:hover { color: var(--text); border-color: var(--border2); background: var(--bg3); }
 
-/* ─── FOOTER ─── */
 footer {
   text-align: center;
   padding: 2rem;
@@ -511,7 +501,6 @@ footer {
   z-index: 1;
 }
 
-/* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
@@ -526,7 +515,6 @@ footer {
 .delay-4 { animation-delay: 0.5s; }
 .delay-5 { animation-delay: 0.65s; }
 
-/* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   nav { padding: 0 1.5rem; }
   .nav-links { display: none; }
@@ -538,10 +526,7 @@ footer {
   .strengths-grid { grid-template-columns: 1fr; }
 }
 
-/* ─── ACTIVE NAV INDICATOR ─── */
 .nav-links a.active { color: var(--text); }
-
-/* ─── SCROLLBAR ─── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--bg3); border-radius: 3px; }
@@ -565,12 +550,12 @@ footer {
 
 <!-- HERO -->
 <div id="hero">
-  <div class="hero-eyebrow fade-up">Senior Data Scientist · Bay Area, CA</div>
+  <div class="hero-eyebrow fade-up">Data Analytics Engineer · Bay Area, CA</div>
   <h1 class="fade-up delay-1">
     Building <em>intelligent</em><br>data systems that<br>drive decisions.
   </h1>
   <p class="hero-sub fade-up delay-2">
-    AI-native analytics engineer with 4+ years shipping production ML pipelines, clinical NLP, and self-serve analytics platforms — currently at Johnson &amp; Johnson.
+    AI-native data analytics engineer with 4+ years shipping production ML pipelines, clinical NLP, and self-serve analytics platforms — currently at Johnson &amp; Johnson.
   </p>
   <div class="hero-actions fade-up delay-3">
     <a href="#projects" class="btn-primary">View Projects</a>
@@ -607,10 +592,10 @@ footer {
   <div class="grid">
     <div>
       <p class="bio">
-        I'm a Senior Data Scientist who lives at the intersection of <strong>machine learning engineering</strong>, <strong>clinical data</strong>, and <strong>scalable analytics infrastructure</strong>. My work at Johnson &amp; Johnson involves building AI-driven forecasting systems for patient adherence, deploying BERT-based NLP over clinical notes, and delivering BI dashboards that translate model outputs into decisions executives can act on.
+        I'm a Data Analytics Engineer who lives at the intersection of <strong>machine learning engineering</strong>, <strong>clinical data</strong>, and <strong>scalable analytics infrastructure</strong>. My work at Johnson &amp; Johnson involves building AI-driven forecasting systems for patient adherence, deploying BERT-based NLP over clinical notes, and delivering BI dashboards that translate model outputs into decisions executives can act on.
       </p>
       <p class="bio" style="margin-top:1rem;">
-        Before J&amp;J, I led demand forecasting and inventory optimization at Orion Technolab — end-to-end, from ETL pipelines through LSTM models to production APIs. I hold an <strong>MS in Data Analytics from San Jose State University</strong> (Dec 2024) and am actively publishing research on privacy-preserving ML for healthcare.
+        Before J&amp;J, I built and fine-tuned NLP and AI chatbot models at Quantiphi as a Machine Learning Engineer, and led demand forecasting and inventory optimization end-to-end at Tata Consultancy Services. I hold an <strong>MS in Data Analytics from San Jose State University</strong> (Dec 2024) and am actively publishing research on privacy-preserving ML for healthcare.
       </p>
       <p class="bio" style="margin-top:1rem;">
         I'm a daily user of AI coding tools (Claude, ChatGPT, Cursor) and am upskilling on <strong>RAG architectures</strong>, <strong>agentic frameworks</strong>, and <strong>LLM pipelines</strong> — looking for roles where clinical domain expertise meets the frontier of GenAI.
@@ -618,7 +603,7 @@ footer {
       <div class="info-block">
         <div class="info-row">
           <span class="info-key">Location</span>
-          <span class="info-val">Bay Area, CA (Los Altos / Palo Alto)</span>
+          <span class="info-val">San Jose, California, United States</span>
         </div>
         <div class="info-row">
           <span class="info-key">Email</span>
@@ -667,16 +652,18 @@ footer {
   </div>
   <div class="timeline">
 
+    <!-- J&J -->
     <div class="timeline-item">
       <div class="timeline-meta">
-        <div class="timeline-period">Feb 2025 — Present</div>
+        <div class="timeline-period">Feb 2025 — Apr 2026 · 1 yr 3 mos</div>
         <div class="timeline-company current">Johnson &amp; Johnson</div>
-        <div class="timeline-loc">USA</div>
+        <div class="timeline-loc">San Jose, California, United States</div>
+        <div class="timeline-type">Contract</div>
       </div>
       <div>
-        <div class="timeline-role">Data Analyst / Senior Data Scientist</div>
+        <div class="timeline-role">Data Analyst</div>
         <div class="timeline-desc">
-          Built production ML models for clinical risk prediction and patient outcome analysis using Python, TensorFlow, and scikit-learn. Deployed BERT + Hugging Face NLP pipelines over unstructured clinical notes and regulatory documents, reducing manual review by 30%. Owned end-to-end data governance with GitHub CI/CD, Docker, and Kubernetes — GxP-aligned. Designed AWS QuickSight, Tableau, and Power BI dashboards tracking operational KPIs and model performance for cross-functional teams including Product, Operations, and Research.
+          Designed and maintained production-grade data models for clinical risk prediction and patient outcome analysis using Python, TensorFlow, and scikit-learn, improving prediction accuracy by 15% and supporting data-driven healthcare decisions. Developed critical dashboards in AWS QuickSight, Tableau, and Power BI to track operational KPIs, model performance, and quality metrics, eliminating ad-hoc reporting requests and driving 30% faster decision-making cycles. Leveraged AI tools (Claude, ChatGPT) daily to optimize SQL queries, generate dbt model documentation, debug data pipeline issues, and prototype analytics solutions 3× faster than manual approaches. Implemented end-to-end data governance workflows with version control (GitHub), CI/CD pipelines, and automated testing using Docker and Kubernetes, ensuring data integrity and regulatory compliance (GxP-aligned). Served as trusted data partner for cross-functional teams (Product, Operations, Research), translating complex analytical findings into clear business recommendations through dashboards, memos, and executive presentations. Built NLP-based automation using BERT and Hugging Face to analyze unstructured clinical notes and regulatory documents, reducing manual review effort by 30% and accelerating insight extraction.
         </div>
         <div class="impact-chips">
           <span class="impact-chip green">↑15% prediction accuracy</span>
@@ -688,42 +675,45 @@ footer {
       </div>
     </div>
 
+    <!-- Quantiphi -->
     <div class="timeline-item">
       <div class="timeline-meta">
-        <div class="timeline-period">Feb 2024 — Jun 2024</div>
+        <div class="timeline-period">Feb 2024 — Jun 2024 · 5 mos</div>
         <div class="timeline-company">Quantiphi</div>
-        <div class="timeline-loc">Massachusetts, USA</div>
+        <div class="timeline-loc">San Jose, California, United States</div>
+      </div>
+      <div>
+        <div class="timeline-role">Machine Learning Engineer</div>
+        <div class="timeline-desc">
+          Built and fine-tuned NLP and AI-based chatbot models using BERT and Transformer architectures for customer support ticket classification, improving classification accuracy by 18% and reducing manual triage effort. Developed data preprocessing and feature engineering pipelines using Python, Pandas, and NumPy, improving training data quality and reducing preprocessing time for modeling workflows. Assisted in deploying machine learning models on Google Cloud Platform using Docker-based environments, supporting smoother model integration into existing systems. Conducted model evaluation and comparison across different algorithms, analyzing performance metrics such as precision, recall, and F1-score to identify optimal approaches. Collaborated with data scientists and product teams to translate model outputs into actionable insights, contributing to dashboard visualizations and reporting using Tableau.
+        </div>
+        <div class="impact-chips">
+          <span class="impact-chip green">↑18% classification accuracy</span>
+          <span class="impact-chip green">↓ manual triage effort</span>
+          <span class="impact-chip">GCP deployment</span>
+          <span class="impact-chip amber">BERT · Transformers · NLP</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TCS -->
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <div class="timeline-period">May 2021 — Dec 2022 · 1 yr 8 mos</div>
+        <div class="timeline-company">Tata Consultancy Services</div>
+        <div class="timeline-loc">India</div>
+        <div class="timeline-type">Full-time</div>
       </div>
       <div>
         <div class="timeline-role">Data Analyst</div>
         <div class="timeline-desc">
-          Built scalable ETL pipelines and data transformation workflows using Python (Pandas, NumPy), SQL, and Apache Airflow. Developed self-serve Tableau dashboards for customer support and operational metrics, eliminating 50+ monthly ad-hoc requests. Conducted A/B testing and statistical analysis to evaluate RNN/LSTM forecasting models for time-series predictions.
+          Built scalable ETL pipelines and data transformation workflows using Python (Pandas, NumPy), SQL, and Airflow, increasing data pipeline efficiency by 35% and enabling real-time analytics delivery for business stakeholders. Developed self-serve Tableau dashboards for customer support and operational metrics, eliminating 50+ monthly ad-hoc reporting requests and empowering stakeholders with data independence. Conducted A/B testing and statistical analysis to evaluate forecasting models (RNN, LSTM) for time-series predictions, providing data-driven recommendations that improved forecast accuracy by 22%. Integrated AI tools (Cursor, ChatGPT) into daily workflow for SQL optimization, code reviews, and rapid prototyping, demonstrating measurable productivity gains in development velocity. Collaborated with product and engineering teams following Agile/Scrum methodologies to convert analytical prototypes into production-grade APIs, reducing iteration cycles by 35% through Waterfall-to-Agile migration.
         </div>
         <div class="impact-chips">
           <span class="impact-chip green">35% pipeline efficiency</span>
           <span class="impact-chip green">22% forecast accuracy</span>
           <span class="impact-chip">Eliminated 50+ monthly reports</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-meta">
-        <div class="timeline-period">May 2020 — Dec 2022</div>
-        <div class="timeline-company">Orion Technolab</div>
-        <div class="timeline-loc">India</div>
-      </div>
-      <div>
-        <div class="timeline-role">Data Analyst / Data Scientist</div>
-        <div class="timeline-desc">
-          Led end-to-end demand forecasting and inventory optimization — from ETL (Kafka, Airflow, SQL) through LSTM/ARIMA modeling to production REST APIs. Built NLP pipelines with SpaCy and NLTK for sentiment analysis over 1M+ customer reviews. Trained CNN and GAN models for product image defect detection. Deployed all systems with Flask/FastAPI, Docker, CI/CD, and CloudWatch monitoring.
-        </div>
-        <div class="impact-chips">
-          <span class="impact-chip green">20% forecast accuracy</span>
-          <span class="impact-chip green">↓15% stockouts</span>
-          <span class="impact-chip green">28% defect detection</span>
-          <span class="impact-chip">35% faster deployments</span>
-          <span class="impact-chip amber">40% less data prep time</span>
+          <span class="impact-chip amber">Agile / Scrum</span>
         </div>
       </div>
     </div>
@@ -773,31 +763,59 @@ footer {
 
     <div class="proj-card">
       <div class="proj-card-top">
+        <div class="proj-icon amber">🤖</div>
+        <span class="proj-badge research">NLP / ML Eng</span>
+      </div>
+      <div class="proj-title">AI Chatbot &amp; Support Ticket Classification</div>
+      <div class="proj-desc">
+        Fine-tuned BERT and Transformer models for customer support ticket classification at Quantiphi. Built end-to-end data preprocessing pipelines, deployed on GCP with Docker, and optimized model selection via precision/recall/F1 analysis. Delivered dashboard visualizations translating model outputs for product teams.
+      </div>
+      <div class="proj-metrics">
+        <div class="proj-metric">
+          <div class="proj-metric-val">18%</div>
+          <div class="proj-metric-label">Classification accuracy</div>
+        </div>
+        <div class="proj-metric">
+          <div class="proj-metric-val">GCP</div>
+          <div class="proj-metric-label">Production deployment</div>
+        </div>
+      </div>
+      <div class="proj-stack">
+        <span class="proj-tag">BERT</span>
+        <span class="proj-tag">Transformers</span>
+        <span class="proj-tag">Python</span>
+        <span class="proj-tag">GCP</span>
+        <span class="proj-tag">Docker</span>
+        <span class="proj-tag">Tableau</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-card-top">
         <div class="proj-icon green">📦</div>
         <span class="proj-badge retail">Retail AI</span>
       </div>
       <div class="proj-title">Intelligent Demand Forecasting &amp; Inventory Optimization</div>
       <div class="proj-desc">
-        End-to-end system replacing manual spreadsheet forecasting for retail clients. Built automated ETL, compared ARIMA/Prophet/XGBoost/LSTM models, and integrated NLP sentiment features from 1M+ customer reviews. Deployed as REST APIs with serverless infrastructure and live monitoring.
+        End-to-end system replacing manual spreadsheet forecasting. Built automated ETL, compared ARIMA/Prophet/XGBoost/LSTM models, and integrated NLP sentiment features from 1M+ customer reviews. Deployed as REST APIs with serverless infrastructure and live monitoring.
       </div>
       <div class="proj-metrics">
         <div class="proj-metric">
-          <div class="proj-metric-val">20%</div>
+          <div class="proj-metric-val">22%</div>
           <div class="proj-metric-label">Forecast accuracy</div>
         </div>
         <div class="proj-metric">
-          <div class="proj-metric-val">15%</div>
-          <div class="proj-metric-label">Stockout reduction</div>
+          <div class="proj-metric-val">35%</div>
+          <div class="proj-metric-label">Pipeline efficiency</div>
         </div>
       </div>
       <div class="proj-stack">
         <span class="proj-tag">LSTM</span>
         <span class="proj-tag">XGBoost</span>
-        <span class="proj-tag">SpaCy</span>
-        <span class="proj-tag">AWS Glue</span>
-        <span class="proj-tag">FastAPI</span>
-        <span class="proj-tag">Docker</span>
-        <span class="proj-tag">CloudWatch</span>
+        <span class="proj-tag">Airflow</span>
+        <span class="proj-tag">SQL</span>
+        <span class="proj-tag">Tableau</span>
+        <span class="proj-tag">Python</span>
       </div>
     </div>
 
@@ -826,35 +844,6 @@ footer {
         <span class="proj-tag">Privacy-ML</span>
         <span class="proj-tag">Biomedical NLP</span>
         <span class="proj-tag">Signal Classification</span>
-      </div>
-    </div>
-
-    <div class="proj-card">
-      <div class="proj-card-top">
-        <div class="proj-icon blue">🏭</div>
-        <span class="proj-badge retail">Computer Vision</span>
-      </div>
-      <div class="proj-title">Product Quality Defect Detection</div>
-      <div class="proj-desc">
-        CNN and GAN-based visual inspection system to classify manufacturing defects. Used transfer learning (ResNet, EfficientNet) and GAN-generated synthetic samples to overcome limited defective image data. Deployed as a lightweight inference API for QC teams.
-      </div>
-      <div class="proj-metrics">
-        <div class="proj-metric">
-          <div class="proj-metric-val">28%</div>
-          <div class="proj-metric-label">Detection improvement</div>
-        </div>
-        <div class="proj-metric">
-          <div class="proj-metric-val">Real-time</div>
-          <div class="proj-metric-label">API inference</div>
-        </div>
-      </div>
-      <div class="proj-stack">
-        <span class="proj-tag">CNN</span>
-        <span class="proj-tag">GAN</span>
-        <span class="proj-tag">ResNet</span>
-        <span class="proj-tag">TensorFlow</span>
-        <span class="proj-tag">Flask</span>
-        <span class="proj-tag">Docker</span>
       </div>
     </div>
 
@@ -909,6 +898,7 @@ footer {
         <span class="skill-tag">Redshift</span>
         <span class="skill-tag">SageMaker</span>
         <span class="skill-tag">Lambda</span>
+        <span class="skill-tag">GCP</span>
         <span class="skill-tag">Snowflake</span>
         <span class="skill-tag">Databricks</span>
         <span class="skill-tag">BigQuery</span>
@@ -1025,7 +1015,7 @@ footer {
   <div style="max-width:600px;margin:0 auto;">
     <h2>Let's build something<br><em style="font-style:italic;color:var(--accent2)">meaningful</em> together.</h2>
     <p class="sub">
-      Open to Data Analyst, Data Scientist, Analytics AI Engineer, and ML Engineering roles. H1B sponsorship required.
+      Open to Data Analytics Engineer, Data Analyst, Analytics AI Engineer, and ML Engineering roles. H1B sponsorship required.
     </p>
     <div class="contact-links">
       <a href="mailto:bhavanb2000@gmail.com" class="contact-link">
